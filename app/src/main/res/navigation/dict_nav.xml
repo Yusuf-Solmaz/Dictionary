@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dict_nav"
+    app:startDestination="@id/dictionaryPageFragment">
+
+    <fragment
+        android:id="@+id/dictionaryPageFragment"
+        android:name="com.yusuf.dictionary.ui.DictionaryPageFragment"
+        android:label="fragment_dictionary_page"
+        tools:layout="@layout/fragment_dictionary_page" >
+        <action
+            android:id="@+id/action_dictionaryPageFragment_to_wordDetailPageFragment"
+            app:destination="@id/wordDetailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordDetailPageFragment"
+        android:name="com.yusuf.dictionary.ui.WordDetailPageFragment"
+        android:label="fragment_word_detail_page"
+        tools:layout="@layout/fragment_word_detail_page" >
+        <argument
+            android:name="wordEng"
+            app:argType="string" />
+        <argument
+            android:name="wordTr"
+            app:argType="string" />
+    </fragment>
+</navigation>
