@@ -20,10 +20,7 @@
         android:label="fragment_word_detail_page"
         tools:layout="@layout/fragment_word_detail_page" >
         <argument
-            android:name="wordEng"
-            app:argType="string" />
-        <argument
-            android:name="wordTr"
-            app:argType="string" />
+            android:name="word"
+            app:argType="com.yusuf.dictionary.db.Word" />
     </fragment>
 </navigation>
