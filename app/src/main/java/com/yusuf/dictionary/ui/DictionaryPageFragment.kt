@@ -16,11 +16,16 @@ import com.yusuf.dictionary.db.WordDao
 
 class DictionaryPageFragment : Fragment() {
 
-    private lateinit var binding: FragmentDictionaryPageBinding
-    private lateinit var wordList: ArrayList<Word>
-    private lateinit var adapter: WordAdapter
+    lateinit var binding: FragmentDictionaryPageBinding
+    lateinit var wordList: ArrayList<Word>
+    lateinit var adapter: WordAdapter
 
     private lateinit var dao: WordDao
+
+    companion object {
+        lateinit var instance: DictionaryPageFragment
+            private set
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +33,8 @@ class DictionaryPageFragment : Fragment() {
     ): View? {
         binding = FragmentDictionaryPageBinding.inflate(inflater,container,false)
         binding.recyclerView.setHasFixedSize(true)
+
+        instance = this
 
         return binding.root
     }

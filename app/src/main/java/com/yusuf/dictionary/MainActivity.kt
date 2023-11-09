@@ -7,8 +7,11 @@ import android.view.Menu
 import androidx.appcompat.widget.SearchView
 import androidx.navigation.findNavController
 import com.info.sqlitekullanimihazirveritabani.DatabaseCopyHelper
+import com.yusuf.dictionary.adapter.WordAdapter
 import com.yusuf.dictionary.databinding.ActivityMainBinding
+import com.yusuf.dictionary.db.Word
 import com.yusuf.dictionary.db.WordDao
+import com.yusuf.dictionary.ui.DictionaryPageFragment
 
 class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
     private lateinit var  binding: ActivityMainBinding
@@ -38,14 +41,14 @@ class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (query != null) {
-            Log.e("Query",query)
+            search(query)
         }
         return true
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
         if (newText != null) {
-            Log.e("QueryTextChange",newText)
+            search(newText)
         }
         return true
     }
@@ -63,5 +66,8 @@ class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
     }
 
     private fun search(query:String){
+        DictionaryPageFragment.instance.wordList = dao.searchWords(query) as ArrayList<Word>
+        DictionaryPageFragment.instance.adapter = WordAdapter(this,DictionaryPageFragment.instance.wordList)
+        DictionaryPageFragment.instance.binding.recyclerView.adapter = DictionaryPageFragment.instance.adapter
     }
 }
