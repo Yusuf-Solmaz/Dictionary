@@ -1,4 +1,5 @@
 # Dictionary
 
-![ezgif com-video-to-gif (5)](https://github.com/Yusuf-Solmaz/Dictionary/assets/83172478/50cb0fa0-9827-401b-bd4e-40521aa4abd0)
 
+
+![ezgif com-video-to-gif (5)](https://github.com/Yusuf-Solmaz/Dictionary/assets/83172478/57673e63-651f-4a22-9528-a8b9ca8cd6fa)
