@@ -3,7 +3,7 @@ package com.yusuf.dictionary.db
 import android.content.Context
 
 class WordDao(context: Context) {
-
+/*
     private val dbHelper = DbHelper(context)
 
     fun getAllWords(): List<Word>{
@@ -35,4 +35,6 @@ class WordDao(context: Context) {
 
         return wordList
     }
+
+ */
 }

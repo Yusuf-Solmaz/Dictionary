@@ -29,8 +29,8 @@ class WordAdapter(private val context:Context,private val wordList: List<Word>):
     }
 
     override fun onBindViewHolder(holder: WordHolder, position: Int) {
-        holder.binding.wordEng.text = wordList[position].wordEng
-        holder.binding.wordTrk.text = wordList[position].wordTr
+        holder.binding.wordEng.text = wordList[position].ingilizce
+        holder.binding.wordTrk.text = wordList[position].turkce
 
         holder.binding.cardView.setOnClickListener {
             val action = DictionaryPageFragmentDirections.actionDictionaryPageFragmentToWordDetailPageFragment(wordList[position])

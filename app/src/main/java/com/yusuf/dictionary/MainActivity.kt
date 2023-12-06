@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
         val item = menu?.findItem(R.id.menuSearch)
         val searchView = item?.actionView as SearchView
         searchView.setOnQueryTextListener(this)
-
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
     }
 
     private fun search(query:String){
-        DictionaryPageFragment.instance.wordList = dao.searchWords(query) as ArrayList<Word>
+       // DictionaryPageFragment.instance.wordList = dao.searchWords(query) as ArrayList<Word>
         DictionaryPageFragment.instance.adapter = WordAdapter(this,DictionaryPageFragment.instance.wordList)
         DictionaryPageFragment.instance.binding.recyclerView.adapter = DictionaryPageFragment.instance.adapter
     }

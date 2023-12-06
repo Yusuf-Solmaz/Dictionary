@@ -27,8 +27,8 @@ class WordDetailPageFragment : Fragment() {
         val bundle: WordDetailPageFragmentArgs by navArgs()
         val dictWord=bundle.word
 
-        binding.WordEn.text = dictWord.wordEng
-        binding.wordTr.text = dictWord.wordTr
+        binding.WordEn.text = dictWord.ingilizce
+        binding.wordTr.text = dictWord.turkce
     }
 
 
